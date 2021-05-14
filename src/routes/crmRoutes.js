@@ -1,4 +1,3 @@
-
 import {addNewContact,
         getContact,
         getContactWithID,
@@ -16,14 +15,18 @@ const routes =(app) =>{
             console.log(`Request type :${req.method}`)
             next();
         }, getContact)
-
+        
+        //post a new contact
         .post(addNewContact);
     
     app.route('/contact/:contactID')
+        //get specific contact
         .get(getContactWithID)
 
+        //updating a specific contact
         .put(updateContact)
 
+        //deleting a specific contact
         .delete(deleteContact);
     
 }
